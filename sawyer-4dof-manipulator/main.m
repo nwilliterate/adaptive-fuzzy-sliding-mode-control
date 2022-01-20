@@ -5,7 +5,7 @@
 % Last Updated: Jan, 20 2022
 %
 % -------------------------------------------------
-% adaptive sliding mode controller
+% adaptive fuzzy sliding mode controller
 % sawyer 4 dof manipulator
 % -------------------------------------------------
 %
