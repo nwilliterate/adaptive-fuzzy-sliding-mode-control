@@ -22,14 +22,21 @@ where $q, \dot{q}, \ddot{q}, \tau, \tau_d \in \mathcal{R}^{n}$ denote the joint 
 <img src=
 "https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cddot%7B%5Cq%7D%3D-%5CM%5E%7B-1%7D%28%5Cq%29%28%5CC%28%5Cq%2C%5Cdot%7B%5Cq%7D%29%5Cdot%7B%5Cq%7D%2B%5CG%28%5Cq%29%2B%5CF%28%5Cdot%7B%5Cq%7D%29-%5Cboldsymbol%5Ctau-%5Cboldsymbol%5Ctau_d+%29" 
 alt="\ddot{\q}=-\M^{-1}(\q)(\C(\q,\dot{\q})\dot{\q}+\G(\q)+\F(\dot{\q})-\boldsymbol\tau-\boldsymbol\tau_d )">
-ddd
+
+
+   ddd
+
+
 <img src=
 "https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0A%5Cs%28t%29%26%3DK_%7Bp%7D%5Ce%28t%29%2BK_%7Bi%7D%5Cint%7B%5Ce%7D%28%5Ctau%29d%5Ctau%2BK_%7Bd%7D%5Cdot%7B%5Ce%7D%28t%29%0A%5Cend%7Balign%2A%7D" 
 alt="\begin{align*}
 \s(t)&=K_{p}\e(t)+K_{i}\int{\e}(\tau)d\tau+K_{d}\dot{\e}(t)
 \end{align*}">
 
-dddd
+
+   dddd
+
+
 <img src=
 "https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0A%5Cdot%7B%5Cs%7D%28t%29+%26%3D+K_p+%5Cdot%7B%5Ce%7D%28t%29+%2B+K_i+%5Ce%28t%29%2B+K_%7Bd%7D%5Cddot%7B%5Ce%7D%28t%29%5C%5C%0A%26%3D+K_p+%5Cdot%7B%5Ce%7D%28t%29+%2B+K_i+%5Ce%28t%29%2BK_d+%28%5Cddot%7B%5Cq%7D_d%2B%5CM%5E%7B-1%7D%28%5Cq%29%28%5CC%28%5Cq%2C%5Cdot%7B%5Cq%7D%29%5Cdot%7B%5Cq%7D%2B%5CG%28%5Cq%29%2B%5CF%28%5Cdot%7B%5Cq%7D%29-%5Cboldsymbol%5Ctau-%5Cboldsymbol%5Ctau_d%29%5C%5C%0A%5Cend%7Balign%2A%7D" 
 alt="\begin{align*}
@@ -37,7 +44,9 @@ alt="\begin{align*}
 &= K_p \dot{\e}(t) + K_i \e(t)+K_d (\ddot{\q}_d+\M^{-1}(\q)(\C(\q,\dot{\q})\dot{\q}+\G(\q)+\F(\dot{\q})-\boldsymbol\tau-\boldsymbol\tau_d)\\
 \end{align*}">
 
-Control effort  equivalent control effort
+
+   Control effort  equivalent control effort
+
 <img src=
 "https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0A%5Cu_%7Beq%7D%3D+%28K_d%5CM%5E%7B-1%7D%28%5Cq%29%29%5E%7B-1%7D%28K_p+%5Cdot%7B%5Ce%7D+%2B+K_i+%5Ce%2BK_d+%28%5Cddot%7B%5Cq%7D_d%2B%5CM%5E%7B-1%7D%28%5Cq%29%28%5CC%28%5Cq%2C%5Cdot%7B%5Cq%7D%29%5Cdot%7B%5Cq%7D%2B%5CG%28%5Cq%29%2B%5CF%28%5Cdot%7B%5Cq%7D%29%29%29%0A%5Cend%7Balign%2A%7D" 
 alt="\begin{align*}
@@ -60,36 +69,24 @@ alt="\begin{align*}
 ### Figure
 
 #### pid controller
-<img src="./sawyer-4dof-manipulator/fig/joint_position_result_1.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/joint_input_result_1.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/position_error_result_1.png" alt="joint_input_result_1"  width="375" />
+<img src="./sawyer-4dof-manipulator/fig/joint_position_result_1.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/joint_input_result_1.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/position_error_result_1.png" alt="joint_input_result_1"  width="220" />
 
 #### smc using sign function
-<img src="./sawyer-4dof-manipulator/fig/joint_position_result_2.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/joint_input_result_2.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/position_error_result_2.png" alt="joint_input_result_1"  width="375" />
+<img src="./sawyer-4dof-manipulator/fig/joint_position_result_2.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/joint_input_result_2.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/position_error_result_2.png" alt="joint_input_result_1"  width="220" />
 
 
 #### smc using sat function
-<img src="./sawyer-4dof-manipulator/fig/joint_position_result_2.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/joint_input_result_2.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/position_error_result_2.png" alt="joint_input_result_1"  width="375" />
+<img src="./sawyer-4dof-manipulator/fig/joint_position_result_2.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/joint_input_result_2.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/position_error_result_2.png" alt="joint_input_result_1"  width="220" />
 
 #### smc using sat function
-<img src="./sawyer-4dof-manipulator/fig/joint_position_result_3.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/joint_input_result_3.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/position_error_result_3.png" alt="joint_input_result_1"  width="375" />
+<img src="./sawyer-4dof-manipulator/fig/joint_position_result_3.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/joint_input_result_3.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/position_error_result_3.png" alt="joint_input_result_1"  width="220" />
 
 
 #### fsmc
-<img src="./sawyer-4dof-manipulator/fig/joint_position_result_4.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/joint_input_result_4.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/position_error_result_4.png" alt="joint_input_result_1"  width="375" />
+<img src="./sawyer-4dof-manipulator/fig/joint_position_result_4.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/joint_input_result_4.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/position_error_result_4.png" alt="joint_input_result_1"  width="220" />
 
 ####  afsmc
-<img src="./sawyer-4dof-manipulator/fig/joint_position_result_5.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/joint_input_result_5.png" alt="joint_input_result_1"  width="375" />
-<img src="./sawyer-4dof-manipulator/fig/position_error_result_5.png" alt="joint_input_result_1"  width="375" />
+<img src="./sawyer-4dof-manipulator/fig/joint_position_result_5.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/joint_input_result_5.png" alt="joint_input_result_1"  width="220" /> <img src="./sawyer-4dof-manipulator/fig/position_error_result_5.png" alt="joint_input_result_1"  width="220" />
 
 
 
