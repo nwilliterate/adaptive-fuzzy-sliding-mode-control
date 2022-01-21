@@ -15,7 +15,17 @@ This repository is a MATLAB simulation of  **adaptive fuzzy sliding mode control
 <img src=
 "https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5CM%28%5Cq%29%5Cddot%7B%5Cq%7D+%2B+%5CC%28%5Cq%2C%5Cdot%7B%5Cq%7D%29%5Cdot%7B%5Cq%7D%2B%5CG%28%5Cq%29%2B%5CF%28%5Cdot%7B%5Cq%7D%29+%3D%5Cboldsymbol%5Ctau+%2B+%5Cboldsymbol%5Ctau_d" 
 alt="\M(\q)\ddot{\q} + \C(\q,\dot{\q})\dot{\q}+\G(\q)+\F(\dot{\q}) =\boldsymbol\tau + \boldsymbol\tau_d">
-where $q, \dot{q}, \ddot{q}, \tau, \tau_d \in \mathcal{R}^{n}$ denote the joint position vector, velocity vector, acceleration, the vector of control torques, and the vector of disturbance torques, respectively, and $M\in\mathcal{R}^{n\times n}$ denotes the symmetric positive definite inertia matrix, $C \in \mathcal{R}^{n\times n}$ denotes the Coriolis matrix, $G \in \mathcal{R}^{n}$ denotes the gravity vector and $F$ is the friction matrix. 
+where <img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle++%5Cq%2C+%5Cdot%7B%5Cq%7D%2C+%5Cddot%7B%5Cq%7D%2C+%5Cboldsymbol%5Ctau%2C+%5Cboldsymbol%5Ctau_d+%5Cin+%5Cmathcal%7BR%7D%5E%7Bn%7D" 
+alt=" \q, \dot{\q}, \ddot{\q}, \boldsymbol\tau, \boldsymbol\tau_d \in \mathcal{R}^{n}"> denote the joint position vector, velocity vector, acceleration, the vector of control torques, and the vector of disturbance torques, respectively, and <img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5CM%5Cin%5Cmathcal%7BR%7D%5E%7Bn%5Ctimes+n%7D" 
+alt="\M\in\mathcal{R}^{n\times n}"> denotes the symmetric positive definite inertia matrix, <img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5CC+%5Cin+%5Cmathcal%7BR%7D%5E%7Bn%5Ctimes+n%7D" 
+alt="\C \in \mathcal{R}^{n\times n}"> denotes the Coriolis matrix, <img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5CG+%5Cin+%5Cmathcal%7BR%7D%5E%7Bn%7D" 
+alt="\G \in \mathcal{R}^{n}"> denotes the gravity vector and <img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+%5CF+%5Cin+%5Cmathcal%7BR%7D%5E%7Bn%7D" 
+alt="\F \in \mathcal{R}^{n}"> is the friction matrix. 
 
    Multiplying $M^{-1}(q)$ by both sides in Equation (1), we have 
 

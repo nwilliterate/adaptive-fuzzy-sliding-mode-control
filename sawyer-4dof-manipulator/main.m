@@ -66,7 +66,7 @@ qdd_t(2,:)=-2.5*pi^2*sin(0.5*pi*t)-10*pi^2*sin(1*pi*t);
 qdd_t(3,:)=-Ran_v2*(0.1*pi)^2*sin(0.1*pi*t);
 qdd_t(4,:)=-Ran_v2*(0.1*pi)^2*sin(0.1*pi*t);
 
-for i=1:4
+for i=1:n
     q_t(i,:) = q_t(i,:) /180*pi;
     qd_t(i,:) = qd_t(i,:) /180*pi;
     qdd_t(i,:) = qdd_t(i,:) /180*pi;
@@ -87,8 +87,8 @@ idx = zeros(sample_size,4);
 
 %%% Simulation
 for i=1:sample_size
-    q = x(1:4, i);
-    dq = x(5:8, i);
+    q = x(1:n, i);
+    dq = x(n+1:n*2, i);
     
     % error
     e(:,i) = q_t(:,i)-q;
@@ -110,7 +110,7 @@ for i=1:sample_size
     max_kf = [800 800 150 100];
     min_kf = [200 200 50 35];
     
-    for k = 1:4
+    for k = 1:n
         %%% AFSMC
         if control_mode == 5
             sdotnor(k, i) = ((sdotmax(k)-sdot(k,i))/(sdotmax(k)-sdotmin(k))*2 - 1);
@@ -174,7 +174,7 @@ end
 fig = figure(1);
 tiledlayout(2,2,'TileSpacing','Compact','Padding','Compact');
 set(gcf,'color','w');
-for i=1:4
+for i=1:n
     ax = nexttile;
     plot(t, q_t(i,:),'-m','LineWidth',1.5');
     hold on
@@ -191,7 +191,7 @@ saveas(gcf,"fig\joint_position_result_"+num2str(control_mode)+".png");
 fig = figure(2);
 tiledlayout(2,2,'TileSpacing','Compact','Padding','Compact');
 set(gcf,'color','w');
-for i=1:4
+for i=1:n
     ax = nexttile;
     plot(t, U(i,:),'-k','LineWidth',1.5');
     grid on
@@ -206,7 +206,7 @@ saveas(gcf,"fig\joint_input_result_"+num2str(control_mode)+".png");
 fig = figure(3);
 tiledlayout(2,2,'TileSpacing','Compact','Padding','Compact');
 set(gcf,'color','w');
-for i=1:4
+for i=1:n
     ax = nexttile;
     plot(t, e(i,:),'-k','LineWidth',1.5');
     grid on
@@ -221,7 +221,7 @@ saveas(gcf,"fig\position_error_result_"+num2str(control_mode)+".png");
 fig = figure(4);
 tiledlayout(2,2,'TileSpacing','Compact','Padding','Compact');
 set(gcf,'color','w');
-for i=1:4
+for i=1:n
     ax = nexttile;
     hold off
     plot(t, s(i,:),'-k');
@@ -282,10 +282,10 @@ end
 
 
 % RSSE : Root Sum Squared Error
-for i=1:4
+for i=1:n
     RSSE(i) = sqrt(sum((e(i,:).^2)*sim_period));
 end
-RSSE(5) = sum(RSSE)
+RSSE(n+1) = sum(RSSE)
 % Function Define
 function tau = sat(u, u1)
 if abs(u) < u1
